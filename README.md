@@ -4,7 +4,7 @@
 How to Properly Set a Stop Loss and Take Profit in Pine Script TradingView
 -------------
 Codes:
-how_to_sl
+how_to_sl, 
 how_to_sl_tp
 
 https://youtu.be/qMKO81FcT_k
