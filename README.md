@@ -7,7 +7,7 @@ Codes:
 how_to_sl, 
 how_to_sl_tp
 
-https://youtu.be/qMKO81FcT_k
+https://youtu.be/Td1pTlqIeAQ
 
 Learn how to set a stop loss and take profit properly and efficiently in Pine Script with this tutorial. We cover a couple of methods in detail and highlight potential coding errors. 
 
