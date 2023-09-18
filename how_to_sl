@@ -1,0 +1,47 @@
+//@version=5
+strategy('How to SL', overlay=true, default_qty_value=100, commission_value=0.1, default_qty_type=strategy.percent_of_equity, commission_type=strategy.commission.percent)
+
+
+// *** Indicators *** 
+bb_length = 20
+bb_mult = 2
+bb_stddev = ta.stdev(close, bb_length)
+bb_average = ta.sma(close, bb_length)
+bb_upper = bb_average + bb_mult * bb_stddev
+bb_lower = bb_average - bb_mult * bb_stddev
+
+
+// *** Signals ***
+enter_long = ta.crossover(close, bb_upper)
+enter_short = ta.crossunder(close, bb_lower)
+close_long = ta.crossunder(close, bb_average)
+close_short = ta.crossover(close, bb_average)
+
+
+// *** Risk management *** 
+entry_price = close
+percent_diff = 5
+stop_loss_price_long = (1 - percent_diff / 100.) * entry_price 
+stop_loss_price_short = (1 + percent_diff / 100.) * entry_price 
+
+
+// *** Positions *** 
+if enter_long and strategy.position_size == 0
+    strategy.entry("Long", strategy.long)
+    strategy.exit("SL Long", "Long", stop = stop_loss_price_long)
+
+if enter_short and strategy.position_size == 0
+    strategy.entry("Short", strategy.short)
+    strategy.exit("SL short", "Short", stop = stop_loss_price_short)
+
+if close_long 
+    strategy.close("Long", "Exit Long")
+
+if close_short
+    strategy.close("Short", "Exit Short")
+
+
+// *** Plots *** 
+plot(bb_upper, color=color.new(#ffb13b, 0), linewidth=2)
+plot(bb_average, color=color.new(#b43bff, 0), linewidth=2)
+plot(bb_lower, color=color.new(#ffb13b, 0), linewidth=2)
