@@ -1,0 +1,63 @@
+//@version=5
+strategy('How to TSL', overlay=true, default_qty_value=100, commission_value=0.1, default_qty_type=strategy.percent_of_equity, commission_type=strategy.commission.percent)
+
+
+// *** Indicators *** 
+bb_length = 20
+bb_mult = 2
+bb_stddev = ta.stdev(close, bb_length)
+bb_average = ta.sma(close, bb_length)
+bb_upper = bb_average + bb_mult * bb_stddev
+bb_lower = bb_average - bb_mult * bb_stddev
+
+plot(bb_upper, color=color.new(#ffb13b, 0), linewidth=2)
+plot(bb_average, color=color.new(#b43bff, 0), linewidth=2)
+plot(bb_lower, color=color.new(#ffb13b, 0), linewidth=2)
+
+
+// *** Entries ***
+entry_long = ta.crossover(close, bb_upper)
+entry_short = ta.crossunder(close, bb_lower)
+
+if entry_long and strategy.position_size == 0
+    strategy.entry("Long", strategy.long)
+if entry_short and strategy.position_size == 0
+    strategy.entry("Short", strategy.short)
+
+
+// *** Trailing Stop Loss *** 
+
+// step 1: compute the trailing stop loss prices
+trail_percent = 0.08
+long_tsl = close * (1 - trail_percent)
+short_tsl = close * (1 + trail_percent)
+// long_tsl = ta.sma(close, 5)
+// short_tsl = ta.sma(close, 5)
+
+
+// step 2: check and update the stop loss depending on price movement
+long_stop_price = 0.0
+long_stop_price := if (strategy.position_size > 0)
+    math.max(long_tsl, long_stop_price[1])
+else
+    0
+
+short_stop_price = 0.0
+short_stop_price := if (strategy.position_size < 0)
+    math.min(short_tsl, short_stop_price[1])
+else
+    999999
+
+
+// step 3: place the exit orders
+if strategy.position_size > 0
+    strategy.exit(id='TSL Long', stop=long_stop_price)
+
+if strategy.position_size < 0
+    strategy.exit(id='TSL Short', stop=short_stop_price)
+
+
+// step 4: Plot the TSL levels
+plot(series=strategy.position_size > 0 ? long_stop_price : na, color=color.new(#40ccfb, 0), style=plot.style_cross, linewidth=3)
+plot(series=strategy.position_size < 0 ? short_stop_price : na, color=color.new(#40ccfb, 0), style=plot.style_cross, linewidth=3)
+
