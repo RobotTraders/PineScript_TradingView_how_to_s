@@ -20,7 +20,7 @@ Here's a simple way to implement a trailing stop loss in Pine Script.
 
 How to implement Risk-Adjusted Position Sizing in Pine Script on TradingView
 -------------
-Code: [how_to_risk_adjusted_position_size](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_risk_adjusted_position_size)
+Code: [how_to_risk_adjusted_position_size](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_risk_adjusted_position_size) \
 Video: [https://youtu.be/cSAS7qctmug](https://youtu.be/cSAS7qctmug)
 
 Learn set your order position size based on your risk management and stop loss in Pine Script. This will work for any currency, forex and crypto.
