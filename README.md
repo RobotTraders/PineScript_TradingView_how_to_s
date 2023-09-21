@@ -5,7 +5,7 @@ How to Properly Set a Stop Loss and Take Profit in Pine Script TradingView
 -------------
 Codes: [how_to_sl](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_sl), 
 [how_to_sl_tp](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_sl_tp) \
-Video: [https://youtu.be/20NMM8KQd2E](https://youtu.be/20NMM8KQd2E)
+Video: [https://youtu.be/4j3bw6NSnMo](https://youtu.be/4j3bw6NSnMo)
 
 Learn how to set a stop loss and take profit properly and efficiently in Pine Script with this tutorial. We cover a couple of methods in detail and highlight potential coding errors. 
 
