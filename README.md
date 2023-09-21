@@ -4,11 +4,11 @@
 How to Properly Set a Stop Loss and Take Profit in Pine Script TradingView
 -------------
 Codes:
-how_to_sl, 
-how_to_sl_tp
+[how_to_sl](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_sl), 
+[how_to_sl_tp](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_sl_tp)
 
-https://youtu.be/20NMM8KQd2E
-
+[https://youtu.be/20NMM8KQd2E
+](https://youtu.be/20NMM8KQd2E)
 Learn how to set a stop loss and take profit properly and efficiently in Pine Script with this tutorial. We cover a couple of methods in detail and highlight potential coding errors. 
 
 
@@ -27,7 +27,7 @@ How to implement Risk-Adjusted Position Sizing in Pine Script on TradingView
 Codes:
 [how_to_risk_adjusted_position_size](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_risk_adjusted_position_size), 
 
-https://youtu.be/cSAS7qctmug
+[https://youtu.be/cSAS7qctmug](https://youtu.be/cSAS7qctmug)
 
 Learn set your order position size based on your risk management and stop loss in Pine Script. This will work for any currency, forex and crypto.
 
