@@ -1,0 +1,48 @@
+//@version=5
+strategy('How to Risk Adjusted Position Size', initial_capital = 1000, commission_value=0.1, commission_type=strategy.commission.percent, overlay=true)
+
+
+// *** Indicators *** 
+bb_length = 20
+bb_mult = 2
+bb_stddev = ta.stdev(close, bb_length)
+bb_average = ta.sma(close, bb_length)
+bb_upper = bb_average + bb_mult * bb_stddev
+bb_lower = bb_average - bb_mult * bb_stddev
+
+
+// *** Signals ***
+entry_long = ta.crossover(close, bb_upper)
+entry_short = ta.crossunder(close, bb_lower)
+
+
+// *** Risk management *** 
+entry_price = close
+percent_diff = 5
+rrr = 2.
+stop_loss_price = (1 - percent_diff / 100.) * entry_price 
+take_profit_price = (1 + rrr * percent_diff / 100.) * entry_price 
+stop_loss_in_ticks = (entry_price - stop_loss_price) / syminfo.mintick
+take_profit_in_ticks = (take_profit_price - entry_price) / syminfo.mintick
+
+
+// *** Position sizing *** 
+exposure = 0.01
+distance_to_sl = math.abs(entry_price - stop_loss_price)
+entry_qty = exposure * strategy.equity / distance_to_sl
+
+
+// *** Positions *** 
+if entry_long and strategy.position_size == 0
+    strategy.entry("Long", strategy.long, qty = entry_qty)
+    strategy.exit("Long", loss = stop_loss_in_ticks, profit = take_profit_in_ticks, comment_loss = "SL Long", comment_profit = "TP Long")
+
+if entry_short and strategy.position_size == 0
+    strategy.entry("Short", strategy.short, qty = entry_qty)
+    strategy.exit("Short", loss = stop_loss_in_ticks, profit = take_profit_in_ticks, comment_loss = "SL Short", comment_profit = "TP Short")
+
+
+// *** Plots *** 
+plot(bb_upper, color=color.new(#ffb13b, 0), linewidth=2)
+plot(bb_average, color=color.new(#b43bff, 0), linewidth=2)
+plot(bb_lower, color=color.new(#ffb13b, 0), linewidth=2)
