@@ -13,7 +13,7 @@ Learn how to set a stop loss and take profit properly and efficiently in Pine Sc
 How to Easily Set up a Trailing Stop Loss in Pine Script TradingView
 -------------
 Code: [how_to_tsl](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_tsl) \
-Video: [https://youtu.be/5BpFlk1y4rk](https://youtu.be/lOsUkjoiAQU)
+Video: [https://youtu.be/lOsUkjoiAQU](https://youtu.be/lOsUkjoiAQU)
 
 Here's a simple way to implement a trailing stop loss in Pine Script.
 
