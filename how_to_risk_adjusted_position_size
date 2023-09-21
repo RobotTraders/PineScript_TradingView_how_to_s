@@ -2,7 +2,7 @@
 strategy('How to Risk Adjusted Position Size', initial_capital = 1000, commission_value=0.1, commission_type=strategy.commission.percent, overlay=true)
 
 
-// *** Indicators *** 
+// *** Indicators *** *
 bb_length = 20
 bb_mult = 2
 bb_stddev = ta.stdev(close, bb_length)
