@@ -28,7 +28,7 @@ Learn how to set your position size based on your risk management and stop loss 
 \
 How to Set Fixed Size Positions in Pine Script TradingView
 -------------
-Code: [how_to_risk_adjusted_position_size](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_risk_adjusted_position_size) \
+Code: [how_to_fixed_size_position](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_fixed_size_position)] \
 Video: [https://youtu.be/c1j7JzxAmOg](https://youtu.be/c1j7JzxAmOg)
 
 Learn how to set your position size to a fixed amount. This will work for any currency, forex and crypto.
