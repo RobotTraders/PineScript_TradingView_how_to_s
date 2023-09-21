@@ -14,7 +14,7 @@ Learn how to set a stop loss and take profit properly and efficiently in Pine Sc
 How to Easily Set up a Trailing Stop Loss in Pine Script TradingView
 -------------
 Code: [how_to_tsl](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_tsl) 
-
+\
 Video: [https://youtu.be/5BpFlk1y4rk](https://youtu.be/5BpFlk1y4rk)
 
 Here's a simple way to implement a trailing stop loss in Pine Script.
@@ -22,8 +22,8 @@ Here's a simple way to implement a trailing stop loss in Pine Script.
 
 How to implement Risk-Adjusted Position Sizing in Pine Script on TradingView
 -------------
-Code: [how_to_risk_adjusted_position_size](https://github.com/RobotTraders/PineScript_TradingView_how_to_s/blob/main/how_to_risk_adjusted_position_size)
-
+Code: 
+\
 Video: [https://youtu.be/cSAS7qctmug](https://youtu.be/cSAS7qctmug)
 
 Learn set your order position size based on your risk management and stop loss in Pine Script. This will work for any currency, forex and crypto.
