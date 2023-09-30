@@ -1,4 +1,4 @@
-# 💡 PineScript_TradingView_how_to_s 💡
+# 💡 PineScript_TradingView_how_to_s
 
 
 How to Properly Set a Stop Loss and Take Profit in Pine Script TradingView
