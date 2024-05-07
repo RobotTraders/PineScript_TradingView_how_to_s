@@ -29,7 +29,7 @@ take_profit_in_ticks = (take_profit_price - entry_price) / syminfo.mintick
 // *** Position sizing *** 
 exposure = 0.01
 distance_to_sl = math.abs(entry_price - stop_loss_price)
-entry_qty = exposure * strategy.equity * entry_price / distance_to_sl
+entry_qty = exposure * strategy.equity / distance_to_sl
 
 
 // *** Positions *** 
